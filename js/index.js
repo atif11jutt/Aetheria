@@ -942,7 +942,7 @@ class H {
             this.particles.maxPositions.push(h),
             this.particles.maxPositions.push(l),
             this.particles.maxPositions.push(x);
-          let g = new THREE.Color("#B5650E");
+          let g = new THREE.Color("#f87313");
           this.particles.colors.push(g.r, g.g, g.b);
           let I = Math.random() * 20 - 10,
             E = Math.random() * 20 - 10;
