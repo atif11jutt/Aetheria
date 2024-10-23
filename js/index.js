@@ -1205,6 +1205,10 @@ barba.init({
   ],
 });
 window.addEventListener("DOMContentLoaded", () => {
+  
+  setInterval(function(){
+    document.title = "Aetheria"
+  }, 100)
   gsap.from("body", { autoAlpha: 0, duration: 1, ease: "linear" }),
     gsap.to(":root", {
       duration: 1,
