@@ -720,6 +720,68 @@ class R {
       this.createScrollTriggers(),
       this.createTimelines(),
       this.init();
+
+      class SimpleSlider {
+        constructor(container) {
+          this.container = container;
+          this.cards = [...container.querySelectorAll(".works-list-item")];
+          this.cardsCount = this.cards.length;
+      
+          this.initializeAnimations();
+          this.setupScrollTrigger();
+        }
+      
+        initializeAnimations() {
+          // Apply initial styles to align cards
+          // gsap.set(this.cards, { xPercent: 0, opacity: 1, scale: 1 }); // Set xPercent to 0 for alignment
+
+          gsap.to(this.cards, {
+            xPercent: (i) => 0 + i * 100, // Offset each card horizontally
+            ease: "power2.out",
+          });
+        
+          // Adjust container to show 3 items in desktop, 1 in mobile
+          const isMobile = window.innerWidth <= 768;
+          const itemsToShow = isMobile ? 1 : 3;
+          this.container.style.display = "grid";
+          this.container.style.gridTemplateColumns = `repeat(${this.cardsCount}, 1fr)`;
+          this.container.style.width = `calc(100% - 20px)`; // Full width with 20px padding
+          this.container.style.marginLeft = 'auto'; // Center the container
+          this.container.style.marginRight = 'auto'; // Center the container
+        }
+        
+      
+        setupScrollTrigger() {
+          // Set up the scroll trigger to create a continuous horizontal scroll effect
+          ScrollTrigger.create({
+            trigger: this.container,
+            start: "top top",
+            end: `+=${this.cardsCount * 200}`, // Adjust end based on content length
+            pin: this.container,
+            scrub: 1,
+            onUpdate: (self) => this.onScrollUpdate(self),
+          });
+        }
+      
+        onScrollUpdate(scrollTrigger) {
+          const progress = scrollTrigger.progress; // Ranges from 0 to 1
+          const offset = -progress * (this.cardsCount - 1) * 100;
+      console.log(offset)
+          // Apply smooth horizontal animation across all cards
+          gsap.to(this.cards, {
+            xPercent: (i) => offset + i * 100, // Offset each card horizontally
+            ease: "power2.out",
+          });
+        }
+      }
+      
+      // Usage example on the homepage
+      const homeSliderContainer = document.querySelector(".works-list-wrapper");
+      if (homeSliderContainer) {
+        new SimpleSlider(homeSliderContainer);
+      }
+      
+      
   }
   init() {
     gsap.set(this.visualLoader, { opacity: 1 }),

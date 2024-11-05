@@ -2540,7 +2540,7 @@ img {
 }
 .up-lig.h1-xl {
   z-index: 1;
-  font-size: 6vw;
+  font-size: 5vw;
   position: relative;
 }
 .contact-block {
@@ -2832,23 +2832,23 @@ img {
 .hero-visual-2 {
   aspect-ratio: 1.3;
   border: 0px solid var(--sage-cream);
-  width: 7vw;
-  transform: translate(6%);
+  width: 6vw;
+  transform: translate(45%);
 }
 .hero-visual-1 {
   aspect-ratio: 1/1.18;
   border-radius: 50%;
-  width: 3.55vw;
+  width: 3.4vw;
   overflow: hidden;
-  transform: translate(-11.7vw, 11%);
+  transform: translate(-22.5vw, 11%);
 }
 .hero-visual-3 {
-  aspect-ratio: 45/63.5;
-  border-radius: 10% 48% 50% 10%;
-  width: 2.84vw;
+  aspect-ratio: 45 / 62.5;
+  border-radius: 10% 60% 60% 10%;
+  width: 2.5vw;
   padding-right: 0;
   overflow: hidden;
-  transform: translate(-38.25vw, 6.85vw);
+  transform: translate(8.9vw, 5.68vw);
 }
 .hero-visual-loader {
   z-index: 10;
@@ -3077,7 +3077,7 @@ img {
 }
 .content__title.content__title--left.content__title--bottom {
   color: var(--sage-cream);
-  max-width: 23ch;
+  max-width: 34ch;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1;
