@@ -736,13 +736,13 @@ class R {
           // gsap.set(this.cards, { xPercent: 0, opacity: 1, scale: 1 }); // Set xPercent to 0 for alignment
 
           gsap.to(this.cards, {
-            xPercent: (i) => 0 + i * 100, // Offset each card horizontally
+            xPercent: (i) => 0 + i * 150, // Offset each card horizontally
             ease: "power2.out",
           });
         
           // Adjust container to show 3 items in desktop, 1 in mobile
           const isMobile = window.innerWidth <= 768;
-          const itemsToShow = isMobile ? 1 : 3;
+          const itemsToShow = isMobile ? 1 : 2;
           this.container.style.display = "grid";
           this.container.style.gridTemplateColumns = `repeat(${this.cardsCount}, 1fr)`;
           this.container.style.width = `calc(100% - 20px)`; // Full width with 20px padding
@@ -765,11 +765,12 @@ class R {
       
         onScrollUpdate(scrollTrigger) {
           const progress = scrollTrigger.progress; // Ranges from 0 to 1
-          const offset = -progress * (this.cardsCount - 1) * 100;
-      console.log(offset)
+          const offset = -progress * (this.cardsCount - 1) * 150;
+          // console.log(offset)
+
           // Apply smooth horizontal animation across all cards
           gsap.to(this.cards, {
-            xPercent: (i) => offset + i * 100, // Offset each card horizontally
+            xPercent: (i) => offset + i * 150, // Offset each card horizontally
             ease: "power2.out",
           });
         }
