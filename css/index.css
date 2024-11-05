@@ -2644,7 +2644,7 @@ img {
   white-space: nowrap;
   flex-wrap: wrap;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 .works-list-name.home {
@@ -3076,11 +3076,15 @@ img {
   background-size: contain;
 }
 .content__title.content__title--left.content__title--bottom {
-  color: var(--sage-cream);
+  color: var(--sage-sand);
   max-width: 34ch;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1;
+}
+
+.bg-white2 .content__title.content__title--left.content__title--bottom{
+  color: var(--sage-cream);
 }
 .home-list-view-wrapper {
   z-index: 2;
@@ -4475,4 +4479,92 @@ img {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+
+/* image hover effect arrow */
+.ori-service-inner-item {
+ z-index: 1;
+ position: relative;
+}
+
+.ori-service-inner-item img{
+  border-radius: 15px;
+}
+
+.ori-service-inner-item:before {
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 0%;
+  content: "";
+  left: auto;
+  height: 100%;
+  position: absolute;
+  border-radius: 15px;
+  -webkit-transition: 500ms all ease;
+  transition: 500ms all ease;
+  background: rgba(13, 13, 13, 0.85);
+}
+
+.ori-service-more {
+  position: absolute;
+  left: 0;
+  top: 60%;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: 500ms all ease;
+  transition: 500ms all ease;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.ori-service-inner-item:after {
+  top: 0px;
+  left: -5px;
+  width: 95%;
+  z-index: -1;
+  content: "";
+  height: 93%;
+  opacity: 0;
+  position: absolute;
+  border-radius: 15px;
+  -webkit-transition: 500ms all ease;
+  transition: 500ms all ease;
+  -webkit-transform: skew(-5deg) rotate(-5deg);
+  transform: skew(-7deg) rotate(-5deg);
+  background-color: var(--sage-sand);
+}
+
+.ori-service-inner-item:hover:before {
+  left: 0;
+  width: 100%;
+  right: auto;
+}
+
+.ori-service-inner-item:hover:after {
+  top: 30px;
+  opacity: 1;
+}
+
+
+.ori-service-inner-item .ori-service-more a {
+  font-size: 70px;
+  display: inline-block;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  color: var(--sage-sand);
+}
+
+.ori-service-inner-item .ori-service-more a::before{
+  content: none;
+}
+
+.ori-service-inner-item:hover .ori-service-more {
+  top: 50%;
+  opacity: 1;
 }

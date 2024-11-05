@@ -258,7 +258,7 @@ class A {
     (this.workImages = [...t.querySelectorAll(".works-intro-item")]),
       (this.flipContainers = [...t.querySelectorAll(".hero-c")].toReversed()),
       (this.finalContainers = [...t.querySelectorAll("[data-hero-visual]")]),
-      (this.excludedIndices = [1, 6, 10]),
+      (this.excludedIndices = []),
       (this.introAnimation = e),
       (this.selectedItems = this.workImages.filter((i) => {
         const s = parseInt(i.getAttribute("data-flip-id"));
@@ -307,7 +307,7 @@ class A {
                   let a = this.mainItems.filter(
                     (n) => parseInt(n.getAttribute("data-flip-id")) === o
                   );
-                  i.append(a[0].querySelector("img"));
+                  // i.append(a[0].querySelector("img"));
                 }),
                   Flip.from(this.state, {
                     duration: 1,
@@ -851,6 +851,19 @@ class R {
             parseInt(e, 10).toString() + "%";
         },
       });
+
+      // 2nd section color change on scroll
+      ScrollTrigger.create({
+        trigger: this.homeIntro,
+        start: "top 20%",
+        onEnter: () => {
+          this.container.classList.toggle("bg-white2");
+        },
+        onLeaveBack: () => {
+          this.container.classList.toggle("bg-white2");
+        },
+      })
+      
   }
   createTimelines() {
     gsap
