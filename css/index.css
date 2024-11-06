@@ -1859,6 +1859,24 @@ textarea.w-select {
 .w-checkbox-input--inputType-custom.w--redirected-focus {
   box-shadow: 0 0 3px 1px #3898ec;
 }
+
+@font-face {
+  font-family: "Romie";
+  src: url("fonts/Romie-Regular-Italic.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Romie";
+  src: url("fonts/Romie-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -1867,7 +1885,7 @@ body {
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
-  font-family: Romie, sans-serif;
+  font-family: "Romie", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.3;
@@ -4464,22 +4482,7 @@ img {
     grid-area: span 1 / span 1 / span 1 / span 1;
   }
 }
-@font-face {
-  font-family: "Romie";
-  src: url("fonts/Romie-Regular-Italic.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Romie";
-  src: url("fonts/Romie-Regular.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 
 /* image hover effect arrow */
@@ -4571,11 +4574,7 @@ img {
 
 
 /* General Styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
+
 
 .custom-contact-form {
   display: flex;
