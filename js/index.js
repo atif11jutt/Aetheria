@@ -670,6 +670,7 @@ class R {
       (this.bgItems = [...t.querySelectorAll(".home-bg-work-item")]),
       (this.bgListContainer = t.querySelector(".home-bg-works")),
       (this.homeIntro = t.querySelector(".section.home-works-intro")),
+      (this.homeCustomHeading = document.querySelector(".custom-heading-color")),
       (this.homeWorksContainer = t.querySelector("#home-works")),
       (this.viewSwitch = t.querySelector(".view-switch")),
       (this.homeWorksWrapper = t.querySelector(".home-works-wrapper")),
@@ -861,6 +862,17 @@ class R {
         },
         onLeaveBack: () => {
           this.container.classList.toggle("bg-white2");
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: this.homeCustomHeading,
+        start: "top 25%",
+        onEnter: () => {
+          this.homeCustomHeading.classList.toggle("bg-white2");
+        },
+        onLeaveBack: () => {
+          this.homeCustomHeading.classList.toggle("bg-white2");
         },
       })
       
