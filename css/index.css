@@ -4726,6 +4726,12 @@ img {
   color: var(--sage-cream);
 }
 
+.page-wrapper{
+  /* background-color: #f5f5dd; */
+}
+
 #bg-grainy-beige{
   background-color: #f5f5dd;
+  width: 100vw;
+  height: 100vh;
 }
