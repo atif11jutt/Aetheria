@@ -2791,6 +2791,7 @@ img {
   white-space: nowrap;
   font-size: 3rem;
   line-height: 1.1;
+  text-transform: uppercase;
 }
 .work-list-talent-name.home {
   font-size: 2rem;
