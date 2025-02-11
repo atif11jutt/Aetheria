@@ -1815,7 +1815,7 @@ textarea.w-select {
 }
 :root {
   --sage-black: #000;
-  --sage-sand: #add8e7;
+  --sage-sand: #97d6ed;
   --sage-cream: #fe9cb4;
   --sage-brown: #743200;
   --white: white;
@@ -2795,6 +2795,10 @@ img {
 }
 .work-list-talent-name.home {
   font-size: 2rem;
+}
+.work-list-talent-name.subtitle {
+  font-size: 1.2rem;
+  text-transform: capitalize;
 }
 .work-list-talent-name.home.list {
   font-size: 4vw;
@@ -4518,7 +4522,7 @@ img {
   border-radius: 15px;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background: rgba(13, 13, 13, 0.85);
+  background: #97d6eda1;
 }
 
 .ori-service-more {
@@ -4571,7 +4575,7 @@ img {
   display: inline-block;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  color: var(--sage-sand);
+  color: var(--sage-cream);
 }
 
 .ori-service-inner-item .ori-service-more a::before{
@@ -4597,12 +4601,12 @@ img {
 
 .form-container {
   display: flex;
-  background-color: #000;
+  /* background-color: #000; */
   padding: 20px;
   align-items: center;
   max-width: 800px;
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
 }
 
 .form-text h2 {
