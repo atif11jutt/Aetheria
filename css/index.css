@@ -1815,8 +1815,8 @@ textarea.w-select {
 }
 :root {
   --sage-black: #000;
-  --sage-sand: #f87313;
-  --sage-cream: #dcceb3;
+  --sage-sand: #add8e7;
+  --sage-cream: #c3A97e;
   --sage-brown: #743200;
   --white: white;
   --black: black;
@@ -4724,4 +4724,8 @@ img {
 
 .custom-heading-color.bg-white2 h2{
   color: var(--sage-cream);
+}
+
+#bg-grainy-beige{
+  background-color: #f5f5dd;
 }
