@@ -2444,6 +2444,7 @@ img {
   align-items: center;
   display: flex;
   position: relative;
+  font-weight: bold;
 }
 .nav-logo {
   z-index: 2;
@@ -4740,6 +4741,10 @@ img {
   bottom: 0;
   right: 0;
   z-index: -1;
+}
+
+.logo-text, .nav-disclaimer{
+  font-weight: bold;
 }
 
 @media (max-width: 567px) {

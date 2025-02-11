@@ -821,10 +821,10 @@ class R {
       trigger: this.homeIntro,
       start: "top 80%",
       onEnter: () => {
-        this.container.classList.toggle("bg-white");
+        // this.container.classList.toggle("bg-white");
       },
       onLeaveBack: () => {
-        this.container.classList.toggle("bg-white");
+        // this.container.classList.toggle("bg-white");
       },
     }),
       (this.gridScroll = ScrollTrigger.create({
@@ -1312,7 +1312,7 @@ var options = {
   animate: true,
   patternWidth: 100,
   patternHeight: 100,
-  grainOpacity: 0.05,
+  grainOpacity: 0.09,
   grainDensity: 1,
   grainWidth: 1,
   grainHeight: 1
