@@ -821,10 +821,10 @@ class R {
       trigger: this.homeIntro,
       start: "top 80%",
       onEnter: () => {
-        this.container.classList.toggle("bg-white");
+        // this.container.classList.toggle("bg-white");
       },
       onLeaveBack: () => {
-        this.container.classList.toggle("bg-white");
+        // this.container.classList.toggle("bg-white");
       },
     }),
       (this.gridScroll = ScrollTrigger.create({
