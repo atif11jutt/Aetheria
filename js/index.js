@@ -22,8 +22,8 @@ var m = (r, t, e) => (L(r, typeof t != "symbol" ? t + "" : t, e), e);
       s.crossOrigin === "use-credentials"
         ? (o.credentials = "include")
         : s.crossOrigin === "anonymous"
-        ? (o.credentials = "omit")
-        : (o.credentials = "same-origin"),
+          ? (o.credentials = "omit")
+          : (o.credentials = "same-origin"),
       o
     );
   }
@@ -552,12 +552,12 @@ class q {
           "<"
         ),
           this.desktopFlag &&
-            gsap.to(this.thumbnailsList, {
-              duration: 1,
-              y: `${-(t / this.sections.length) * 70}%`,
-              x: 0,
-              ease: "power3.inOut",
-            });
+          gsap.to(this.thumbnailsList, {
+            duration: 1,
+            y: `${-(t / this.sections.length) * 70}%`,
+            x: 0,
+            ease: "power3.inOut",
+          });
       }),
       this.mm.add("(max-width: 767px)", () => {
         i.to(
@@ -566,12 +566,12 @@ class q {
           "<"
         ),
           this.mobileFlag &&
-            gsap.to(this.thumbnailsList, {
-              duration: 1,
-              y: 0,
-              x: `${-(t / this.sections.length) * 70}%`,
-              ease: "power3.inOut",
-            });
+          gsap.to(this.thumbnailsList, {
+            duration: 1,
+            y: 0,
+            x: `${-(t / this.sections.length) * 70}%`,
+            ease: "power3.inOut",
+          });
       }),
       (this.currentIndex = t);
   }
@@ -598,8 +598,8 @@ class q {
       window.addEventListener("resize", () => {
         document.querySelector(".work-thumbnail-list") &&
           (this.desktopCheck(),
-          this.mobileCheck(),
-          this.gotoSection(this.currentIndex, 1));
+            this.mobileCheck(),
+            this.gotoSection(this.currentIndex, 1));
       });
   }
 }
@@ -631,7 +631,7 @@ class R {
         }),
         (this.currIndex = this.workItems.indexOf(this.closestItem)),
         this.currIndex !== this.newIndex &&
-          (gsap.to(this.bgItems[this.newIndex], { opacity: 0, duration: 0.3 }),
+        (gsap.to(this.bgItems[this.newIndex], { opacity: 0, duration: 0.3 }),
           gsap.to(this.listViewItems[this.newIndex], {
             filter: "blur(4px)",
             duration: 0.3,
@@ -722,68 +722,68 @@ class R {
       this.createTimelines(),
       this.init();
 
-      class SimpleSlider {
-        constructor(container) {
-          this.container = container;
-          this.cards = [...container.querySelectorAll(".works-list-item")];
-          this.cardsCount = this.cards.length;
-      
-          this.initializeAnimations();
-          this.setupScrollTrigger();
-        }
-      
-        initializeAnimations() {
-          // Apply initial styles to align cards
-          // gsap.set(this.cards, { xPercent: 0, opacity: 1, scale: 1 }); // Set xPercent to 0 for alignment
+    class SimpleSlider {
+      constructor(container) {
+        this.container = container;
+        this.cards = [...container.querySelectorAll(".works-list-item")];
+        this.cardsCount = this.cards.length;
 
-          gsap.to(this.cards, {
-            xPercent: (i) => 0 + i * 150, // Offset each card horizontally
-            ease: "power2.out",
-          });
-        
-          // Adjust container to show 3 items in desktop, 1 in mobile
-          const isMobile = window.innerWidth <= 768;
-          const itemsToShow = isMobile ? 1 : 2;
-          this.container.style.display = "grid";
-          this.container.style.gridTemplateColumns = `repeat(${this.cardsCount}, 1fr)`;
-          this.container.style.width = `calc(100% - 20px)`; // Full width with 20px padding
-          this.container.style.marginLeft = 'auto'; // Center the container
-          this.container.style.marginRight = 'auto'; // Center the container
-        }
-        
-      
-        setupScrollTrigger() {
-          // Set up the scroll trigger to create a continuous horizontal scroll effect
-          ScrollTrigger.create({
-            trigger: this.container,
-            start: "top top",
-            end: `+=${this.cardsCount * 200}`, // Adjust end based on content length
-            pin: this.container,
-            scrub: 1,
-            onUpdate: (self) => this.onScrollUpdate(self),
-          });
-        }
-      
-        onScrollUpdate(scrollTrigger) {
-          const progress = scrollTrigger.progress; // Ranges from 0 to 1
-          const offset = -progress * (this.cardsCount - 1) * 150;
-          // console.log(offset)
+        this.initializeAnimations();
+        this.setupScrollTrigger();
+      }
 
-          // Apply smooth horizontal animation across all cards
-          gsap.to(this.cards, {
-            xPercent: (i) => offset + i * 150, // Offset each card horizontally
-            ease: "power2.out",
-          });
-        }
+      initializeAnimations() {
+        // Apply initial styles to align cards
+        // gsap.set(this.cards, { xPercent: 0, opacity: 1, scale: 1 }); // Set xPercent to 0 for alignment
+
+        gsap.to(this.cards, {
+          xPercent: (i) => 0 + i * 150, // Offset each card horizontally
+          ease: "power2.out",
+        });
+
+        // Adjust container to show 3 items in desktop, 1 in mobile
+        const isMobile = window.innerWidth <= 768;
+        const itemsToShow = isMobile ? 1 : 2;
+        this.container.style.display = "grid";
+        this.container.style.gridTemplateColumns = `repeat(${this.cardsCount}, 1fr)`;
+        this.container.style.width = `calc(100% - 20px)`; // Full width with 20px padding
+        this.container.style.marginLeft = 'auto'; // Center the container
+        this.container.style.marginRight = 'auto'; // Center the container
       }
-      
-      // Usage example on the homepage
-      const homeSliderContainer = document.querySelector(".works-list-wrapper");
-      if (homeSliderContainer) {
-        new SimpleSlider(homeSliderContainer);
+
+
+      setupScrollTrigger() {
+        // Set up the scroll trigger to create a continuous horizontal scroll effect
+        ScrollTrigger.create({
+          trigger: this.container,
+          start: "top top",
+          end: `+=${this.cardsCount * 200}`, // Adjust end based on content length
+          pin: this.container,
+          scrub: 1,
+          onUpdate: (self) => this.onScrollUpdate(self),
+        });
       }
-      
-      
+
+      onScrollUpdate(scrollTrigger) {
+        const progress = scrollTrigger.progress; // Ranges from 0 to 1
+        const offset = -progress * (this.cardsCount - 1) * 150;
+        // console.log(offset)
+
+        // Apply smooth horizontal animation across all cards
+        gsap.to(this.cards, {
+          xPercent: (i) => offset + i * 150, // Offset each card horizontally
+          ease: "power2.out",
+        });
+      }
+    }
+
+    // Usage example on the homepage
+    const homeSliderContainer = document.querySelector(".works-list-wrapper");
+    if (homeSliderContainer) {
+      new SimpleSlider(homeSliderContainer);
+    }
+
+
   }
   init() {
     gsap.set(this.visualLoader, { opacity: 1 }),
@@ -800,9 +800,9 @@ class R {
     this.container.addEventListener("click", (t) => {
       t.target.classList.contains("view-link") &&
         ((this.view = t.target.getAttribute("data-view")),
-        this.viewBtns.forEach((e) => e.classList.remove("current")),
-        t.target.classList.add("current"),
-        this.switchViews(this.view));
+          this.viewBtns.forEach((e) => e.classList.remove("current")),
+          t.target.classList.add("current"),
+          this.switchViews(this.view));
     });
   }
   switchViews(t) {
@@ -853,29 +853,29 @@ class R {
         },
       });
 
-      // 2nd section color change on scroll
-      ScrollTrigger.create({
-        trigger: this.homeIntro,
-        start: "top 20%",
-        onEnter: () => {
-          this.container.classList.toggle("bg-white2");
-        },
-        onLeaveBack: () => {
-          this.container.classList.toggle("bg-white2");
-        },
-      });
+    // 2nd section color change on scroll
+    ScrollTrigger.create({
+      trigger: this.homeIntro,
+      start: "top 20%",
+      onEnter: () => {
+        this.container.classList.toggle("bg-white2");
+      },
+      onLeaveBack: () => {
+        this.container.classList.toggle("bg-white2");
+      },
+    });
 
-      ScrollTrigger.create({
-        trigger: this.homeCustomHeading,
-        start: "top 25%",
-        onEnter: () => {
-          this.homeCustomHeading.classList.toggle("bg-white2");
-        },
-        onLeaveBack: () => {
-          this.homeCustomHeading.classList.toggle("bg-white2");
-        },
-      })
-      
+    ScrollTrigger.create({
+      trigger: this.homeCustomHeading,
+      start: "top 25%",
+      onEnter: () => {
+        this.homeCustomHeading.classList.toggle("bg-white2");
+      },
+      onLeaveBack: () => {
+        this.homeCustomHeading.classList.toggle("bg-white2");
+      },
+    })
+
   }
   createTimelines() {
     gsap
@@ -1071,14 +1071,14 @@ class H {
         new THREE.Float32BufferAttribute(this.particles.mouseRepulsion, 1)
       );
     let y = {
-        uDuration: { type: "f", value: 180 },
-        uElapsedTime: { type: "f", value: 0 },
-        uSize: { type: "f", value: 3 },
-        uNoise: { type: "f", value: 8 },
-        uMousePosition: { type: "v2", value: new THREE.Vector2() },
-        uMouseRadius: { type: "f", value: 100 },
-        uMouseStrength: { type: "f", value: 0.75 },
-      },
+      uDuration: { type: "f", value: 180 },
+      uElapsedTime: { type: "f", value: 0 },
+      uSize: { type: "f", value: 3 },
+      uNoise: { type: "f", value: 8 },
+      uMousePosition: { type: "v2", value: new THREE.Vector2() },
+      uMouseRadius: { type: "f", value: 100 },
+      uMouseStrength: { type: "f", value: 0.75 },
+    },
       d = new THREE.ShaderMaterial({
         uniforms: y,
         vertexShader: document.getElementById("particle-image-vs").textContent,
@@ -1127,7 +1127,7 @@ class H {
     let i;
     if (
       ((i = this.raycaster.intersectObjects(this.planeHelperObject, !0)),
-      i.length > 0)
+        i.length > 0)
     ) {
       let s = i[0];
       (t = s.point.x + this.particleCanvas.width / 2),
@@ -1135,8 +1135,8 @@ class H {
     }
     this.imageParticlesSystem.material.uniforms &&
       (this.imageParticlesSystem.material.uniforms.uElapsedTime.value++,
-      (this.imageParticlesSystem.material.uniforms.uMousePosition.value.x = t),
-      (this.imageParticlesSystem.material.uniforms.uMousePosition.value.y = e)),
+        (this.imageParticlesSystem.material.uniforms.uMousePosition.value.x = t),
+        (this.imageParticlesSystem.material.uniforms.uMousePosition.value.y = e)),
       this.renderer.render(this.scene, this.camera);
   }
 }
@@ -1201,8 +1201,8 @@ barba.init({
                                 f
                                   ? new A(t, e)
                                   : (gsap.to(".hero-visual-loader", {
-                                      opacity: 0,
-                                    }),
+                                    opacity: 0,
+                                  }),
                                     gsap.to(".hero-visual-img", {
                                       opacity: 1,
                                       display: "block",
@@ -1288,13 +1288,15 @@ barba.init({
       },
       after(r) {
         r.next.container;
+        let currentIndex = 0;
+        setTimeout(rotateWords, 2000);
       },
     },
   ],
 });
 window.addEventListener("DOMContentLoaded", () => {
-  
-  setInterval(function(){
+
+  setInterval(function () {
     document.title = "Media Bros"
   }, 100)
   gsap.from("body", { autoAlpha: 0, duration: 1, ease: "linear" }),
@@ -1304,6 +1306,8 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power1.out",
       "--visual-hidden": 1,
     });
+
+
 });
 
 
@@ -1320,3 +1324,46 @@ var options = {
 
 grained('#bg-grainy-beige', options);
 
+
+
+
+let currentIndex = 0;
+// Function to handle the word rotation animation
+function rotateWords() {
+  const words = document.querySelectorAll(".dynamic-text");
+
+  // Get the current and next word elements
+  const currentWord = words[currentIndex];
+  const nextIndex = (currentIndex + 1) % words.length;
+  const nextWord = words[nextIndex];
+
+  if (currentWord) {
+    // Slide in the current word
+    currentWord.classList.add("active");
+
+    // After holding, slide it out and simultaneously slide in the next word
+    setTimeout(() => {
+      currentWord.classList.remove("active");
+      currentWord.classList.add("exit");
+
+      // Slide in the next word after a brief delay
+      nextWord.classList.add("active");
+      currentWord.addEventListener("transitionend", () => {
+        currentWord.classList.remove("exit"); // Reset the current word position
+      }, { once: true });
+
+      // Update index and continue loop
+      currentIndex = nextIndex;
+      setTimeout(rotateWords, 2000); // Delay before the next rotation starts
+
+    }, 1500); // Hold the current word in place for 1.5 seconds
+  }
+
+}
+
+
+// Initialize the first word display
+// words[currentIndex].classList.add("active");
+
+// Start the animation loop after an initial delay
+setTimeout(rotateWords, 2000);

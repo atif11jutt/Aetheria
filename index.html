@@ -90,8 +90,8 @@
 
                 /* Main Variables */
                 :root {
-                    --main-dark: #000000;
-                    --main-light: #f87313;
+                    --main-dark: #97d6ed;
+                    --main-light: #fcd9e2;
                     --visual-hidden: 0;
                 }
 
@@ -2226,45 +2226,6 @@ pointer-events:none;
                         </h2>
                     </div>
 
-                    <script>
-                        const words = document.querySelectorAll(".dynamic-text");
-                        let currentIndex = 0;
-
-                        // Function to handle the word rotation animation
-                        function rotateWords() {
-                            // Get the current and next word elements
-                            const currentWord = words[currentIndex];
-                            const nextIndex = (currentIndex + 1) % words.length;
-                            const nextWord = words[nextIndex];
-
-                            // Slide in the current word
-                            currentWord.classList.add("active");
-
-                            // After holding, slide it out and simultaneously slide in the next word
-                            setTimeout(() => {
-                                currentWord.classList.remove("active");
-                                currentWord.classList.add("exit");
-
-                                // Slide in the next word after a brief delay
-                                nextWord.classList.add("active");
-                                currentWord.addEventListener("transitionend", () => {
-                                    currentWord.classList.remove("exit"); // Reset the current word position
-                                }, { once: true });
-
-                                // Update index and continue loop
-                                currentIndex = nextIndex;
-                                setTimeout(rotateWords, 2000); // Delay before the next rotation starts
-
-                            }, 1500); // Hold the current word in place for 1.5 seconds
-                        }
-
-                        // Initialize the first word display
-                        words[currentIndex].classList.add("active");
-
-                        // Start the animation loop after an initial delay
-                        setTimeout(rotateWords, 2000);
-
-                    </script>
 
                     <form class="contact-form">
                         <label for="name">Name *</label>
@@ -2286,7 +2247,7 @@ pointer-events:none;
             <aside init-hidden="" class="nav-disclaimer-wrapper">
                 <div class="container">
                     <div class="nav-disclaimer">
-                        <div id="w-node-c0b4cbb0-bf15-fdd3-a3ac-732ab88aa07f-69962c07" class="up-lig">© ALL RIGHTS
+                        <div id="w-node-c0b4cbb0-bf15-fdd3-a3ac-732ab88aa07f-69962c07" class="up-lig">© Media Bros Pty Ltd - ALL RIGHTS
                             RESERVED.</div>
                         <div id="w-node-c0b4cbb0-bf15-fdd3-a3ac-732ab88aa081-69962c07" class="view-switch">
                         </div>

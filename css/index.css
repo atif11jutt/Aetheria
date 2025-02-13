@@ -2600,11 +2600,15 @@ img {
 }
 .menu-works-dropdown {
   z-index: 1;
-  background-color: #fff;
+  background-color: #fcd9e2;
   padding-top: 5rem;
   padding-bottom: 2rem;
   position: fixed;
   inset: 0% 0% auto;
+}
+
+.menu-works-dropdown a{
+  color: var(--sage-sand);
 }
 .nav-text {
   z-index: 2;
@@ -2785,7 +2789,7 @@ img {
 }
 .indicator {
   z-index: 2;
-  border: 1px solid var(--sage-brown);
+  border: 1px solid var(--sage-cream);
   opacity: 0;
   transform-style: preserve-3d;
   position: absolute;
@@ -2820,7 +2824,7 @@ img {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   grid-template-rows: auto;
-  grid-template-columns: 0.35fr 1fr 0.35fr;
+  grid-template-columns: 0.75fr 1fr 0.75fr;
   grid-auto-columns: 1fr;
   justify-content: space-between;
   display: grid;
