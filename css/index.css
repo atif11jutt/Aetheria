@@ -2600,7 +2600,7 @@ img {
 }
 .menu-works-dropdown {
   z-index: 1;
-  background-color: #000;
+  background-color: #fff;
   padding-top: 5rem;
   padding-bottom: 2rem;
   position: fixed;
@@ -2616,6 +2616,12 @@ img {
   height: 1px;
   margin-top: 2rem;
 }
+
+.menu-line,
+.menu-works-line {
+    background-color: var(--sage-cream) !important;
+}
+
 .works-list-wrapper {
   width: 100%;
   height: 100vh;
