@@ -1274,7 +1274,7 @@ barba.init({
         let t = r.next.container,
           e = r.current.container;
         return (
-          gsap.set(e, { opacity: 0.4, duration: 1 }),
+          gsap.set(e, { opacity: 0, duration: 1 }),
           gsap.fromTo(
             t,
             { clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" },
