@@ -4771,3 +4771,27 @@ img {
     font-size: 8vw;
   }  
 }
+
+
+.button-section{
+  padding: 30px 0;
+  text-align: center;
+}
+.home-btn{
+  display: inline-block;
+  background: var(--sage-cream);
+  color: #000;
+  padding: 15px 40px;
+  border-radius: 30px;
+  transition: 0.3s;
+  text-decoration: none !important;
+}
+
+.home-btn::after, .home-btn::before{
+  content: none;
+}
+
+.home-btn:hover{
+  background-color: var(--sage-sand);
+  color: #fff;
+}
