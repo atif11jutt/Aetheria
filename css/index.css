@@ -2623,7 +2623,7 @@ img {
 
 .menu-line,
 .menu-works-line {
-    background-color: var(--sage-cream) !important;
+    background-color: var(--sage-sand) !important;
 }
 
 .works-list-wrapper {
@@ -2637,7 +2637,7 @@ img {
 .works-list {
   grid-column-gap: 0rem;
   grid-row-gap: 0rem;
-  grid-template-rows: 100%;
+  grid-template-rows: 65%;
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
   place-items: center;
@@ -3127,6 +3127,10 @@ img {
 }
 
 .bg-white2 .content__title.content__title--left.content__title--bottom{
+  color: var(--sage-cream);
+}
+
+.bg-white3 .hero-intro-container {
   color: var(--sage-cream);
 }
 .home-list-view-wrapper {
@@ -4565,7 +4569,7 @@ img {
   transition: 500ms all ease;
   -webkit-transform: skew(-5deg) rotate(-5deg);
   transform: skew(-7deg) rotate(-5deg);
-  background-color: var(--sage-sand);
+  background-color: var(--sage-cream);
 }
 
 .ori-service-inner-item:hover:before {

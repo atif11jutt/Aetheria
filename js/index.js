@@ -856,6 +856,17 @@ class R {
     // 2nd section color change on scroll
     ScrollTrigger.create({
       trigger: this.homeIntro,
+      start: "top 80%",
+      onEnter: () => {
+        this.container.classList.toggle("bg-white3");
+      },
+      onLeaveBack: () => {
+        this.container.classList.toggle("bg-white3");
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: this.homeIntro,
       start: "top 20%",
       onEnter: () => {
         this.container.classList.toggle("bg-white2");
@@ -1289,7 +1300,7 @@ barba.init({
       after(r) {
         r.next.container;
         let currentIndex = 0;
-        setTimeout(rotateWords, 2000);
+        setTimeout(rotateWords, 1500);
       },
     },
   ],
@@ -1354,7 +1365,7 @@ function rotateWords() {
 
       // Update index and continue loop
       currentIndex = nextIndex;
-      setTimeout(rotateWords, 2000); // Delay before the next rotation starts
+      setTimeout(rotateWords, 1500); // Delay before the next rotation starts
 
     }, 1500); // Hold the current word in place for 1.5 seconds
   }
@@ -1366,4 +1377,4 @@ function rotateWords() {
 // words[currentIndex].classList.add("active");
 
 // Start the animation loop after an initial delay
-setTimeout(rotateWords, 2000);
+setTimeout(rotateWords, 1500);
