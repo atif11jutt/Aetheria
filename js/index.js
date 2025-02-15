@@ -1300,7 +1300,7 @@ barba.init({
       after(r) {
         r.next.container;
         let currentIndex = 0;
-        setTimeout(rotateWords, 1500);
+        rotateWords();
       },
     },
   ],
@@ -1365,9 +1365,9 @@ function rotateWords() {
 
       // Update index and continue loop
       currentIndex = nextIndex;
-      setTimeout(rotateWords, 1500); // Delay before the next rotation starts
+      setTimeout(rotateWords, 1000); // Delay before the next rotation starts
 
-    }, 1500); // Hold the current word in place for 1.5 seconds
+    }, 1000); // Hold the current word in place for 1.5 seconds
   }
 
 }

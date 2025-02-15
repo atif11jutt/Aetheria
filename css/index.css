@@ -4774,7 +4774,7 @@ img {
 
 
 .button-section{
-  padding: 30px 0;
+  padding: calc(50vh - 50px) 0;
   text-align: center;
 }
 .home-btn{
