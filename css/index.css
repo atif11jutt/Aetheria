@@ -4795,3 +4795,8 @@ img {
   background-color: var(--sage-sand);
   color: #fff;
 }
+
+.contact-heading{
+  padding-top: 6rem;
+  text-align: center;
+}
