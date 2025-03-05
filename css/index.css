@@ -4783,20 +4783,77 @@ img {
   color: #000;
   font-size: 6vw;
   padding: 3vw 6vw;
-  border: 0.75vw solid;
   border-radius: 40vw;
   transition: 0.3s;
   text-decoration: none !important;
+  position: relative;
+  border: 1rem solid #000;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #000;
+}
+
+
+.styles_button_bg__HZFgV {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+  will-change: opacity;
+  border-radius: 40vw;
+  overflow: hidden;
+}
+
+.styles_button_bg__HZFgV:after,
+.styles_button_bg__HZFgV:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(/images/button-contact-bg.png) no-repeat 50%;
+  background-size: 100% 100%;
+  animation: styles_bg-animation-loop__Bewq2 10s linear infinite
+}
+
+.styles_button_bg__HZFgV:after {
+  left: -98%
+}
+
+.home-btn span{
+  position: relative;
+  z-index: 1;
+}
+
+.home-btn:hover {
+  box-shadow: 1.2rem 1.2rem 0 .25rem #000;
+}
+
+.home-btn:hover .styles_button_bg__HZFgV {
+  opacity: 1
+}
+
+@keyframes styles_bg-animation-loop__Bewq2 {
+  0% {
+      transform: translateX(0)
+  }
+
+  to {
+      transform: translateX(98%)
+  }
 }
 
 .home-btn::after, .home-btn::before{
   content: none;
 }
 
-.home-btn:hover{
+/* .home-btn:hover{
   background-color: var(--sage-sand);
   color: #fff;
-}
+} */
 
 .contact-heading{
   padding-top: 6rem;
