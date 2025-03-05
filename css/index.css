@@ -4781,8 +4781,10 @@ img {
   display: inline-block;
   background: var(--sage-cream);
   color: #000;
-  padding: 15px 40px;
-  border-radius: 30px;
+  font-size: 6vw;
+  padding: 3vw 6vw;
+  border: 0.75vw solid;
+  border-radius: 40vw;
   transition: 0.3s;
   text-decoration: none !important;
 }
