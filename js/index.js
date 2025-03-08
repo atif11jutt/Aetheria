@@ -841,6 +841,10 @@ class R {
           gsap.set(this.workItems, { z: (i) => (i + 1) * -1800 + e }),
             this.getP();
         },
+        onLeaveBack: () => {
+          // hide the BG when scroll back
+          gsap.to(this.bgListContainer, { opacity: 0, duration: 0.5 });
+        },
       })),
       ScrollTrigger.create({
         trigger: this.container,
