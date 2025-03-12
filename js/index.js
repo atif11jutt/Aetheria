@@ -167,13 +167,13 @@ class u {
       this.init();
   }
   wrapWords(t) {
-    gsap.set(this.words, { yPercent: t }),
-      this.words.forEach((e) => {
-        let i = document.createElement("span");
-        i.classList.add("char-wrap"),
-          e.parentNode.insertBefore(i, e),
-          i.appendChild(e);
-      });
+    // gsap.set(this.words, { yPercent: t }),
+    //   this.words.forEach((e) => {
+    //     let i = document.createElement("span");
+    //     i.classList.add("char-wrap"),
+    //       e.parentNode.insertBefore(i, e),
+    //       i.appendChild(e);
+    //   });
   }
   animateText(t, e, i, s = 0) {
     this.dataText.length !== 0 &&
@@ -632,19 +632,21 @@ class R {
         (this.currIndex = this.workItems.indexOf(this.closestItem)),
         this.currIndex !== this.newIndex &&
         (gsap.to(this.bgItems[this.newIndex], { opacity: 0, duration: 0.3 }),
-          gsap.to(this.listViewItems[this.newIndex], {
-            filter: "blur(4px)",
-            duration: 0.3,
-          }),
+          // gsap.to(this.listViewItems[this.newIndex], {
+          //   filter: "blur(4px)",
+          //   duration: 0.3,
+          // }),
           (this.newIndex = this.currIndex),
-          gsap.to(this.bgItems[this.newIndex], { opacity: 1, duration: 0.3 }),
-          gsap.to(this.listViewItems[this.newIndex], {
-            filter: "blur(0px)",
-            duration: 0.3,
-          }),
-          gsap.to(this.listViewContainer, {
-            y: () => -this.getTotalHeight(this.newIndex),
-          }));
+          gsap.to(this.bgItems[this.newIndex], { opacity: 1, duration: 0.3 })
+          // gsap.to(this.listViewItems[this.newIndex], {
+          //   filter: "blur(0px)",
+          //   duration: 0.3,
+          // }),
+        //   gsap.to(this.listViewContainer, {
+        //     y: () => -this.getTotalHeight(this.newIndex),
+        //   }
+        // )
+      );
     });
     m(this, "resetClosestItem", () => {
       this.closestItem,
@@ -672,7 +674,7 @@ class R {
       (this.homeIntro = t.querySelector(".section.home-works-intro")),
       (this.homeCustomHeading = document.querySelector(".custom-heading-color")),
       (this.homeWorksContainer = t.querySelector("#home-works")),
-      (this.viewSwitch = t.querySelector(".view-switch")),
+      // (this.viewSwitch = t.querySelector(".view-switch")),
       (this.homeWorksWrapper = t.querySelector(".home-works-wrapper")),
       (this.z1 = [
         -3200.35064, -2559.08714, -2775.71775, -4815.29581, -3814.68899,
@@ -930,18 +932,18 @@ class R {
             scrub: 1,
             ease: "linear",
             onEnter: () => {
-              gsap.to(this.viewSwitch, {
-                opacity: 1,
-                visibility: "visible",
-                duration: 0.3,
-              });
+              // gsap.to(this.viewSwitch, {
+              //   opacity: 1,
+              //   visibility: "visible",
+              //   duration: 0.3,
+              // });
             },
             onLeaveBack: () => {
-              gsap.to(this.viewSwitch, {
-                opacity: 0,
-                visibility: "hidden",
-                duration: 0.3,
-              });
+              // gsap.to(this.viewSwitch, {
+              //   opacity: 0,
+              //   visibility: "hidden",
+              //   duration: 0.3,
+              // });
             },
           },
         })
@@ -1179,65 +1181,68 @@ barba.init({
           new c(t),
           htmx
             .ajax("GET", "/homepage-collection/homepage", {
-              target: ".h-c-item.is-1",
-              select: ".works-intro-item:nth-of-type(1) > img",
+              target: ".works-intro-list-wrapper",
+              select: "#works-intro-list",
             })
             .then(() => {
               htmx
                 .ajax("GET", "/homepage-collection/homepage", {
-                  target: ".h-c-item.is-2",
-                  select: ".works-intro-item:nth-of-type(6) > img",
+                  target: ".grid",
+                  select: ".grid-wrap",
                 })
                 .then(() => {
-                  htmx
-                    .ajax("GET", "/homepage-collection/homepage", {
-                      target: ".h-c-item.is-3",
-                      select: ".works-intro-item:nth-of-type(10) > img",
-                    })
-                    .then(() => {
-                      htmx
-                        .ajax("GET", "/homepage-collection/homepage", {
-                          target: ".works-intro-list-wrapper",
-                          select: "#works-intro-list",
-                        })
-                        .then(() => {
-                          htmx
-                            .ajax("GET", "/homepage-collection/homepage", {
-                              target: ".grid",
-                              select: ".grid-wrap",
-                            })
-                            .then(() => {
-                              let e = new P(t);
-                              t
-                                .querySelectorAll(".works-intro-item")
-                                .forEach((o, a) => {
-                                  o.setAttribute("data-flip-id", a + 1);
-                                }),
-                                f
-                                  ? new A(t, e)
-                                  : (gsap.to(".hero-visual-loader", {
-                                    opacity: 0,
-                                  }),
-                                    gsap.to(".hero-visual-img", {
-                                      opacity: 1,
-                                      display: "block",
-                                      duration: 1,
-                                    }),
-                                    p.start(),
-                                    e.animateText());
-                              let s = new u(
-                                t.querySelector(".home-list-view-wrapper"),
-                                0,
-                                120,
-                                2,
-                                !1
-                              );
-                              new R(t, s);
-                            });
-                        });
-                    });
+                  let e = new P(t);
+                  t
+                    .querySelectorAll(".works-intro-item")
+                    .forEach((o, a) => {
+                      o.setAttribute("data-flip-id", a + 1);
+                    }),
+                    f
+                      ? new A(t, e)
+                      : (gsap.to(".hero-visual-loader", {
+                        opacity: 0,
+                      }),
+                        gsap.to(".hero-visual-img", {
+                          opacity: 1,
+                          display: "block",
+                          duration: 1,
+                        }),
+                        p.start(),
+                        e.animateText());
+                  let s = new u(
+                    t.querySelector(".home-list-view-wrapper"),
+                    0,
+                    120,
+                    2,
+                    !1
+                  );
+                  new R(t, s);
                 });
             });
+
+
+        // htmx
+        //   .ajax("GET", "/homepage-collection/homepage", {
+        //     target: ".h-c-item.is-1",
+        //     select: ".works-intro-item:nth-of-type(1) > img",
+        //   })
+        //   .then(() => {
+        //     htmx
+        //       .ajax("GET", "/homepage-collection/homepage", {
+        //         target: ".h-c-item.is-2",
+        //         select: ".works-intro-item:nth-of-type(6) > img",
+        //       })
+        //       .then(() => {
+        //         htmx
+        //           .ajax("GET", "/homepage-collection/homepage", {
+        //             target: ".h-c-item.is-3",
+        //             select: ".works-intro-item:nth-of-type(10) > img",
+        //           })
+        //           .then(() => {
+
+        //           });
+        //       });
+        //   });
       },
     },
     {
