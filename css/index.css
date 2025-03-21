@@ -3482,7 +3482,7 @@ img {
   }
   .menu-link {
     text-transform: uppercase;
-    font-size: 3.5rem;
+    font-size: 6vw;
   }
   .menu-footer {
     grid-column-gap: 1rem;
@@ -3501,12 +3501,18 @@ img {
     grid-row-gap: 1rem;
     text-align: center;
     grid-template-rows: max-content 1fr 15%;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto auto 20%;
     align-content: center;
     height: auto;
     min-height: 100svh;
-    padding-top: 6.5rem;
+    padding-top: 7.5rem;
     padding-bottom: 2rem;
+  }
+  .work-info{
+    grid-column: span 3 !important;
+  }
+  .work-main-list-wrapper{
+    grid-column: span 2 !important;
   }
   .work-info {
     overflow: hidden;
@@ -3515,7 +3521,7 @@ img {
     font-size: 3rem;
   }
   .h1.small {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   .work-desc {
     max-width: 100%;
@@ -3529,10 +3535,10 @@ img {
     overflow: hidden;
   }
   .work-thumbnail-list {
-    flex-direction: row;
+    /* flex-direction: row;
     grid-auto-flow: column;
     align-items: center;
-    padding-top: 0;
+    padding-top: 0; */
   }
   .work-thumbnail-item {
     height: 7vh;
@@ -3552,7 +3558,7 @@ img {
     height: auto;
   }
   .content__title.content__title--left.content__title--bottom {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
   }
   .about-clients {
     padding-top: 1rem;
@@ -3564,6 +3570,12 @@ img {
     width: 100%;
     height: 55vh;
   }
+  .home-btn {
+    border: 0.4rem solid #000 !important;
+  }
+  .home-btn:hover {
+    box-shadow: 0.5rem 0.5rem 0 0 #000 !important;
+}
 }
 @media screen and (max-width: 479px) {
   .typography-wrapper {
@@ -3612,14 +3624,14 @@ img {
     grid-template-columns: 1fr;
   }
   .nav-grid {
-    grid-template-columns: max-content 1fr 2rem;
+    grid-template-columns: max-content 1fr;
   }
   .nav-left,
   .nav-right {
     display: none;
   }
   .h0-wide {
-    font-size: 36vw;
+    font-size: 8.5vw;
   }
   .about-image {
     width: 9rem;
@@ -3653,7 +3665,7 @@ img {
   }
   .works-list-name,
   .works-list-name.home.list {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .work-grid {
     grid-column-gap: 1rem;
@@ -3685,8 +3697,9 @@ img {
     transform: scale(1.4);
   }
   .loading-text {
-    font-size: 1.25rem;
-    top: 25%;
+    font-size: 1rem;
+    top: -39%;
+    left: 2%;
   }
   .home-works-wrapper {
     transform: none;
@@ -3722,6 +3735,12 @@ img {
   .about-clients {
     padding-top: 1rem;
     padding-bottom: 2rem;
+  }
+  .nav-disclaimer-wrapper{
+    /* position: relative !important; */
+  }
+  .mobile-hide{
+    display: none !important;
   }
 }
 #w-node-_13007503-69b5-f3a4-6384-e76e0b007ae0-69962c07 {
@@ -4762,13 +4781,17 @@ img {
   z-index: -1;
 }
 
+.logo-text{
+  white-space: nowrap;
+}
+
 .logo-text, .nav-disclaimer{
   font-weight: bold;
 }
 
 @media (max-width: 567px) {
   .logo-text{
-    font-size: 8vw;
+    font-size: 7vw;
   }  
 }
 

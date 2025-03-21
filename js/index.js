@@ -341,6 +341,7 @@ class C {
       this.setupInitialAnimations();
   }
   initializeProperties(t) {
+    
     (this.iteration = 0),
       (this.spacing = 0.15),
       (this.snapTime = gsap.utils.snap(this.spacing)),
@@ -727,6 +728,12 @@ class R {
     class SimpleSlider {
       constructor(container) {
         this.container = container;
+        if (window.innerWidth <= 768) { 
+          const firstItem = container.querySelector(".mobile-hide");
+          if (firstItem) {
+              firstItem.remove(); // Completely remove the element from DOM
+          }
+      }
         this.cards = [...container.querySelectorAll(".works-list-item")];
         this.cardsCount = this.cards.length;
 
@@ -737,6 +744,9 @@ class R {
       initializeAnimations() {
         // Apply initial styles to align cards
         // gsap.set(this.cards, { xPercent: 0, opacity: 1, scale: 1 }); // Set xPercent to 0 for alignment
+
+
+        
 
         gsap.to(this.cards, {
           xPercent: (i) => 0 + i * 150, // Offset each card horizontally
