@@ -4611,6 +4611,12 @@ img {
   color: var(--sage-cream);
 }
 
+.ori-service-inner-item .ori-service-more a svg{
+  width: 4.5rem;
+  fill: var(--sage-cream);
+}
+
+
 .ori-service-inner-item .ori-service-more a::before{
   content: none;
 }

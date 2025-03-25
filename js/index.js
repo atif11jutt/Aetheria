@@ -253,6 +253,7 @@ class P {
     this.wrapWords(), this.arrowLoop();
   }
 }
+
 class A {
   constructor(t, e) {
     (this.workImages = [...t.querySelectorAll(".works-intro-item")]),
@@ -757,7 +758,7 @@ class R {
         const isMobile = window.innerWidth <= 768;
         const itemsToShow = isMobile ? 1 : 2;
         this.container.style.display = "grid";
-        this.container.style.gridTemplateColumns = `repeat(${this.cardsCount}, 1fr)`;
+        // this.container.style.gridTemplateColumns = `repeat(${this.cardsCount}, 1fr)`;
         this.container.style.width = `calc(100% - 20px)`; // Full width with 20px padding
         this.container.style.marginLeft = 'auto'; // Center the container
         this.container.style.marginRight = 'auto'; // Center the container
@@ -829,6 +830,7 @@ class R {
       this.grid.style.setProperty("--grid-inner-scale", "0.5");
   }
   createScrollTriggers() {
+    console.log("createScrollTriggers")
     ScrollTrigger.create({
       trigger: this.homeIntro,
       start: "top 80%",
@@ -905,6 +907,7 @@ class R {
 
   }
   createTimelines() {
+    console.log("createTimelines")
     gsap
       .timeline({
         defaults: { ease: "none" },
@@ -1326,9 +1329,9 @@ barba.init({
 });
 window.addEventListener("DOMContentLoaded", () => {
 
-  setInterval(function () {
-    document.title = "Media Bros"
-  }, 100)
+  // setInterval(function () {
+  //   document.title = "Media Bros"
+  // }, 100)
   gsap.from("body", { autoAlpha: 0, duration: 1, ease: "linear" }),
     gsap.to(":root", {
       duration: 1,
@@ -1388,6 +1391,13 @@ function rotateWords() {
 
     }, 1000); // Hold the current word in place for 1.5 seconds
   }
+
+
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        window.location.reload(); // Reload page if returned via back button
+    }
+});
 
 }
 
