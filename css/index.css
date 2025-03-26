@@ -3576,6 +3576,9 @@ img {
   .home-btn:hover {
     box-shadow: 0.5rem 0.5rem 0 0 #000 !important;
 }
+.archive-list {
+  grid-template-columns: 1fr 1fr;
+}
 }
 @media screen and (max-width: 479px) {
   .typography-wrapper {
