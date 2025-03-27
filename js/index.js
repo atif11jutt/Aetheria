@@ -564,14 +564,14 @@ class q {
       this.mm.add("(max-width: 767px)", () => {
         i.to(
           this.indicator,
-          { y: 0, x: `${t * 100}%`, duration: 1, ease: "power1.inOut" },
+          { x: 0, y: `${t * 142}%`, duration: 1, ease: "power1.inOut" },
           "<"
         ),
-          this.mobileFlag &&
+          this.desktopFlag &&
           gsap.to(this.thumbnailsList, {
             duration: 1,
-            y: 0,
-            x: `${-(t / this.sections.length) * 70}%`,
+            y: `${-(t / this.sections.length) * 70}%`,
+            x: 0,
             ease: "power3.inOut",
           });
       }),
@@ -707,7 +707,6 @@ class R {
       (this.progress = 0),
       (this.tl1 = null),
       (this.tlList = null),
-      (this.viewBtns = t.querySelectorAll(".view-link")),
       (this.view = "grid-view"),
       (this.gridScroll = null),
       (this.listViewWrapper = this.container.querySelector(
@@ -721,7 +720,6 @@ class R {
       ]),
       (this.textMask = t.querySelector(".text-mask")),
       this.setUpStyles(),
-      this.setUpListeners(),
       this.createScrollTriggers(),
       this.createTimelines(),
       this.init();
@@ -809,15 +807,7 @@ class R {
       }),
       this.getP();
   }
-  setUpListeners() {
-    this.container.addEventListener("click", (t) => {
-      t.target.classList.contains("view-link") &&
-        ((this.view = t.target.getAttribute("data-view")),
-          this.viewBtns.forEach((e) => e.classList.remove("current")),
-          t.target.classList.add("current"),
-          this.switchViews(this.view));
-    });
-  }
+  
   switchViews(t) {
     t === "list-view"
       ? (this.textAnim.animateText(0.5, 120, 2), this.tlList.play())
@@ -1233,29 +1223,6 @@ barba.init({
                 });
             });
 
-
-        // htmx
-        //   .ajax("GET", "/homepage-collection/homepage", {
-        //     target: ".h-c-item.is-1",
-        //     select: ".works-intro-item:nth-of-type(1) > img",
-        //   })
-        //   .then(() => {
-        //     htmx
-        //       .ajax("GET", "/homepage-collection/homepage", {
-        //         target: ".h-c-item.is-2",
-        //         select: ".works-intro-item:nth-of-type(6) > img",
-        //       })
-        //       .then(() => {
-        //         htmx
-        //           .ajax("GET", "/homepage-collection/homepage", {
-        //             target: ".h-c-item.is-3",
-        //             select: ".works-intro-item:nth-of-type(10) > img",
-        //           })
-        //           .then(() => {
-
-        //           });
-        //       });
-        //   });
       },
     },
     {
@@ -1400,6 +1367,13 @@ function rotateWords() {
 });
 
 }
+
+
+window.addEventListener("pageshow", function (event) {
+  if (event.persisted) {
+      window.location.reload(); // Reload page if returned via back button
+  }
+});
 
 
 // Initialize the first word display
