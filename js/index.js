@@ -299,6 +299,17 @@ class A {
             "<"
           )
           .eventCallback("onComplete", () => {
+            // hide visual loader full screen, before hero heading animation
+            document.querySelector(".hero-visual-loader").style.opacity = 0;
+
+            // gsap.from("body", { autoAlpha: 0, duration: 0.5, ease: "linear" }),
+            gsap.to(":root", {
+              duration: 1,
+              delay: window.location.pathname === "/" ? 1 : 0,
+              ease: "power1.out",
+              "--visual-hidden": 1,
+            });
+
             this.introAnimation.animateText(),
               (this.state = Flip.getState(this.items)),
               (this.state2 = Flip.getState(this.finalContainers)),
@@ -308,6 +319,7 @@ class A {
                   let a = this.mainItems.filter(
                     (n) => parseInt(n.getAttribute("data-flip-id")) === o
                   );
+                  
                   // i.append(a[0].querySelector("img"));
                 }),
                   Flip.from(this.state, {
@@ -797,6 +809,7 @@ class R {
 
   }
   init() {
+    
     gsap.set(this.visualLoader, { opacity: 1 }),
       f ? p.stop() : p.start(),
       (f = !1),
@@ -849,6 +862,18 @@ class R {
           // hide the BG when scroll back
           gsap.to(this.bgListContainer, { opacity: 0, duration: 0.5 });
         },
+        // 👇 Hides bg when scrolling past the end of section
+        onLeave: () => {
+          gsap.to(this.bgListContainer, { opacity: 0, duration: 0.5 });
+        },
+        // 👇 Optional: Re-show bg when re-entering from either direction
+        onEnter: () => {
+          gsap.to(this.bgListContainer, { opacity: 1, duration: 0.5 });
+        },
+        onEnterBack: () => {
+          gsap.to(this.bgListContainer, { opacity: 1, duration: 0.5 });
+        },
+        
       })),
       ScrollTrigger.create({
         trigger: this.container,
@@ -894,6 +919,9 @@ class R {
         this.homeCustomHeading.classList.toggle("bg-white2");
       },
     })
+
+
+
 
   }
   createTimelines() {
@@ -952,6 +980,8 @@ class R {
         })
         .to(this.homeWorksWrapper, { z: 0 })
         .from(this.homeWorksWrapper, { opacity: 0 }, "0"),
+
+        
       gsap
         .timeline({
           scrollTrigger: {
@@ -1299,13 +1329,15 @@ window.addEventListener("DOMContentLoaded", () => {
   // setInterval(function () {
   //   document.title = "Media Bros"
   // }, 100)
-  gsap.from("body", { autoAlpha: 0, duration: 1, ease: "linear" }),
-    gsap.to(":root", {
-      duration: 1,
-      delay: window.location.pathname === "/" ? 5 : 0,
-      ease: "power1.out",
-      "--visual-hidden": 1,
-    });
+
+
+  // gsap.from("body", { autoAlpha: 0, duration: 1, ease: "linear" }),
+  //   gsap.to(":root", {
+  //     duration: 1,
+  //     delay: window.location.pathname === "/" ? 5 : 0,
+  //     ease: "power1.out",
+  //     "--visual-hidden": 1,
+  //   });
 
 
 });
@@ -1365,6 +1397,7 @@ function rotateWords() {
         window.location.reload(); // Reload page if returned via back button
     }
 });
+
 
 }
 
