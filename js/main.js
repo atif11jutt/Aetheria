@@ -1398,6 +1398,18 @@ function rotateWords() {
     }
 });
 
+$('.mobile-dropdown-toggle').off('click').on('click', function () {
+    if ($(this).hasClass('open')) {
+      // If already open, then close it
+      $(this).removeClass('open');
+      $(this).next('.submenu').slideUp(300);
+    } else {
+      // If closed, then open it
+      $(this).addClass('open');
+      $(this).next('.submenu').slideDown(300);
+    }
+  });
+  
 
 }
 

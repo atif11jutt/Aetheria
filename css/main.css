@@ -2578,8 +2578,9 @@ img {
 
 .nav-logo {
     z-index: 2;
-    width: 15rem;
-    position: relative
+    width: 20rem;
+    position: relative;
+    max-width: 66vw;
 }
 
 .nav-right {
@@ -3791,12 +3792,13 @@ img {
 
     .menu-link {
         text-transform: uppercase;
-        font-size: 5.5vw
+        font-size: 10vw;
     }
 
     .mobile-dropdown .submenu .menu-link {
         text-transform: uppercase;
-        font-size: 4.5vw
+        font-size: 5vw;
+        color: var(--sage-cream);
     }
 
     .menu-footer {
@@ -3973,7 +3975,8 @@ img {
     }
 
     .nav-grid {
-        grid-template-columns: max-content 1fr
+        /* grid-template-columns: max-content 1fr */
+        grid-template-columns: max-content 1fr 2rem;
     }
 
     .nav-left,
@@ -4061,7 +4064,7 @@ img {
     }
 
     .hero-visual-loader {
-        transform: scale(1.4)
+        transform: scale(1.85)
     }
 
     .loading-text {
@@ -5369,8 +5372,20 @@ img {
 }
 
 .contact-heading {
-    padding-top: 6rem;
+    padding-top: 10rem;
     text-align: center
+}
+
+.clients-heading{
+    text-align: center;
+    position: fixed;
+    top: 6.5rem;
+    left: 0;
+    width: 100%;
+}
+
+.clients-heading h1{
+    font-size: 2rem;
 }
 
 .work-category-name {

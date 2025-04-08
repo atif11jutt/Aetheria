@@ -274,7 +274,9 @@ class A {
       this.flipContainers.forEach((i, s) => {
         i.append(this.workImages[this.flipContainers.length - (s + 1)]);
       }),
-      (this.loaderTimeline = gsap.timeline().add(() => {
+      (// Loader animation removed
+this.introAnimation.animateText();
+//
         Flip.from(this.state, {
           duration: 1,
           opacity: 1,
@@ -305,7 +307,7 @@ class A {
             // gsap.from("body", { autoAlpha: 0, duration: 0.5, ease: "linear" }),
             gsap.to(":root", {
               duration: 1,
-              delay: 0,
+              delay: window.location.pathname === "/" ? 1 : 0,
               ease: "power1.out",
               "--visual-hidden": 1,
             });
