@@ -3016,7 +3016,7 @@ img {
     grid-auto-columns: 1fr;
     justify-content: space-between;
     display: grid;
-    white-space: nowrap
+    /* white-space: nowrap; */
 }
 
 .nav-scrol-indicator {
