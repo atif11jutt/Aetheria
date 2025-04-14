@@ -749,7 +749,7 @@ class R {
         this.cardsCount = this.cards.length;
 
         this.initializeAnimations();
-        this.setupScrollTrigger();
+        this.setupScrollTrigger2();
       }
 
       initializeAnimations() {
@@ -773,7 +773,7 @@ class R {
       }
 
 
-      setupScrollTrigger() {
+      setupScrollTrigger2() {
         // Set up the scroll trigger to create a continuous horizontal scroll effect
         ScrollTrigger.create({
           trigger: this.container,
@@ -781,11 +781,11 @@ class R {
           end: `+=${this.cardsCount * 200}`, // Adjust end based on content length
           pin: this.container,
           scrub: 1,
-          onUpdate: (self) => this.onScrollUpdate(self),
+          onUpdate: (self) => this.onScrollUpdate2(self),
         });
       }
 
-      onScrollUpdate(scrollTrigger) {
+      onScrollUpdate2(scrollTrigger) {
         const progress = scrollTrigger.progress; // Ranges from 0 to 1
         const offset = -progress * (this.cardsCount - 1) * 150;
         // console.log(offset)
