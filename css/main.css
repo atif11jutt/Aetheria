@@ -3005,7 +3005,8 @@ img {
     padding-top: 1rem;
     padding-bottom: 1rem;
     position: fixed;
-    inset: auto 0% 0%
+    inset: auto 0% 0%;
+    pointer-events: none;
 }
 
 .nav-disclaimer {
@@ -5406,4 +5407,14 @@ img {
 .work-category-name {
     font-size: 1.2rem;
     margin-top: .75rem
+}
+
+
+.ratufa-popup-title{
+    display: none !important;
+}
+
+.ratufa-popup-container {
+    min-width: 250px;
+    font-family: inherit !important;
 }

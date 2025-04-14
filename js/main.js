@@ -744,7 +744,7 @@ class R {
           if (firstItem) {
               firstItem.remove(); // Completely remove the element from DOM
           }
-      }
+        }
         this.cards = [...container.querySelectorAll(".works-list-item")];
         this.cardsCount = this.cards.length;
 
@@ -756,8 +756,6 @@ class R {
         // Apply initial styles to align cards
         // gsap.set(this.cards, { xPercent: 0, opacity: 1, scale: 1 }); // Set xPercent to 0 for alignment
 
-
-        
 
         gsap.to(this.cards, {
           xPercent: (i) => 0 + i * 150, // Offset each card horizontally
@@ -801,7 +799,7 @@ class R {
     }
 
     // Usage example on the homepage
-    const homeSliderContainer = document.querySelector(".works-list-wrapper");
+    const homeSliderContainer = document.querySelector(".home-slider-list");
     if (homeSliderContainer) {
       new SimpleSlider(homeSliderContainer);
     }
@@ -1303,6 +1301,8 @@ barba.init({
       enter(r) {
         let t = r.next.container,
           e = r.current.container;
+        //   console.log("page enter");
+          window.scrollTo(0, 0);
         return (
           gsap.set(e, { opacity: 0, duration: 1 }),
           gsap.fromTo(
@@ -1420,7 +1420,10 @@ window.addEventListener("pageshow", function (event) {
   }
 });
 
-
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+  
 // Initialize the first word display
 // words[currentIndex].classList.add("active");
 
